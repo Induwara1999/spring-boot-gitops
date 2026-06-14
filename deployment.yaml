@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: spring-app
-        image: indu1999/spring-boot-gitops-app:1 # Matches the new app name
+        image: indu1999/spring-boot-gitops-app:2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
