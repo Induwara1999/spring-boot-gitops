@@ -9,15 +9,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spring-boot-app
+      app: spring-boot-app-gitops
   template:
     metadata:
       labels:
-        app: spring-boot-app
+        app: spring-boot-app-gitops
     spec:
       containers:
       - name: spring-app
-        image: indu1999/spring-boot-app:19 # Jenkins will automatically overwrite this tag number
+        image: indu1999/spring-boot-app:26 # Jenkins will automatically overwrite this tag number
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
