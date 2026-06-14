@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-boot-app
+  name: spring-boot-gitops-app # Changed name
   namespace: jenkins-apps
-  annotations:
-    field.cattle.io/description: 'Managed by ArgoCD | GitOps Manifest Repository'
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spring-boot-app-gitops
+      app: spring-boot-gitops-app # Changed name
   template:
     metadata:
       labels:
-        app: spring-boot-app-gitops
+        app: spring-boot-gitops-app # Changed name
     spec:
       containers:
       - name: spring-app
-        image: indu1999/spring-boot-app:26 # Jenkins will automatically overwrite this tag number
+        image: indu1999/spring-boot-gitops-app:1 # Matches the new app name
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
